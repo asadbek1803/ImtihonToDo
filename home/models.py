@@ -11,6 +11,8 @@ class Todo(models.Model):
     title = models.CharField(max_length=150)
     time = models.DateTimeField()
     description = models.TextField()
-    status = models.CharField(max_length=4, choices=status_s)
+    status = models.CharField(max_length=40, choices=status_s)
 
 
+    def __str__(self):
+        return self.title

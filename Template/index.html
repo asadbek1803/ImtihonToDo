@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>ToDo</title>
+        <style>
+            .card {
+                background-color: orange;
+                width: 600px;
+                border: 1px solid black;
+                border-radius: 5%;
+            }
+
+            .card__main :hover {
+                background-color: lightblue;
+            }
+
+
+
+            .main__but {
+                color: blue;
+                display: inline;
+                float: right;
+            }
+
+            .form_new {
+                display: inline;
+                float: right;
+                background-color: orange;
+                width: 600px;
+                border: 1px solid black;
+                border-radius: 5%;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;"><i><b>Kundalik ishlar</b></i></h1>
+        <div class="card__main">
+            <div class="card">
+                <h2 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">title</h2>
+                <hr style="color: darkgrey;">
+                <h4>Title: Todo title here</h4>
+                <hr style="color: darkgrey;">
+                <h4>
+                    Time: Todo time here
+                </h4>
+                <hr style="color: darkgrey;">
+                <h4>
+                    Description: Todo desction here
+                </h4>
+                <hr style="color: darkgrey;">
+                <h4>
+                    Status: Todo status here
+                </h4>
+
+                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="#" style="color: azure;">Delete&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">delete</i></a></button>
+                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="#" style="color: azure;">Edit&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">edit</i></a></button>
+            </div>
+
+        </div>
+        <div class="form_new">
+            <form action="/" method="post">
+                <h1>Yaratish</h1>
+                <input type="text" name="title" placeholder="Title todo"><br><br>
+                <input type="datetime-local" name="time"><br><br>
+                <textarea name="doc"  cols="30" rows="10" placeholder="Todo Description"></textarea><br><br>
+                <select name="status" id="status">
+                    <option value="bajarilmoqda">Bajarilmoqda</option>
+                    <option value="tugatildi">Tugatildi</option>
+                    <option value="to'xtadi">To'xtadi</option>
+                </select><br><br>
+                <button type="submit" style="height: 25px; width: 85px; background-color: blue;">Yaratish</button>
+            </form>
+        </div>
+    </body>
+</html>
