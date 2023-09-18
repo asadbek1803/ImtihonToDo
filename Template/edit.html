@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="form_new">
+            <form action="/" method="post">{%csrf_token%}
+                <h1>Edit</h1>
+                <input type="text" name="title" placeholder="Title todo" value="{{todo.title}}"><br><br>
+                <input type="datetime-local" name="time"><br><br>
+                <textarea name="doc"  cols="30" rows="10" placeholder="Todo Description"></textarea><br><br>
+
+                <select name="status" id="status">
+
+
+
+
+                    <option value="bajarilmoqda">Bajarilmoqda</option>
+                    <option value="tugatildi" >Tugatildi</option>
+                    <option value="to'xtadi" selected>To'xtadi</option>
+
+                </select>
+
+                <br><br>
+                <button type="submit" style="height: 25px; width: 85px; background-color: blue;">Yaratish</button>
+            </form>
+        </div>
+</body>
+</html>

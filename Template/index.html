@@ -6,6 +6,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>ToDo</title>
         <style>
+
+            body {
+                position: relative;
+                }
             .card {
                 background-color: orange;
                 width: 600px;
@@ -27,7 +31,9 @@
 
             .form_new {
                 display: inline;
-                float: right;
+                position: absolute;
+                left: 50%;
+                top: 8%;
                 background-color: orange;
                 width: 600px;
                 border: 1px solid black;
@@ -35,35 +41,41 @@
 
             }
 
+
+
         </style>
     </head>
     <body>
         <h1 style="text-align: center;"><i><b>Kundalik ishlar</b></i></h1>
         <div class="card__main">
+            {%for i in todo%}
             <div class="card">
-                <h2 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">title</h2>
+                <h2 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">{{i.title}}</h2>
                 <hr style="color: darkgrey;">
-                <h4>Title: Todo title here</h4>
+                <h4>Title: {{i.title}}</h4>
                 <hr style="color: darkgrey;">
                 <h4>
-                    Time: Todo time here
+                    Time: {{i.time}}
                 </h4>
                 <hr style="color: darkgrey;">
                 <h4>
-                    Description: Todo desction here
+                    Description: {{i.description}}
                 </h4>
                 <hr style="color: darkgrey;">
                 <h4>
-                    Status: Todo status here
+                    Status: {{i.status}}
                 </h4>
 
-                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="#" style="color: azure;">Delete&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">delete</i></a></button>
-                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="#" style="color: azure;">Edit&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">edit</i></a></button>
+                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="/delete/{{i.id}}/" style="color: azure;">Delete&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">delete</i></a></button>
+                <button type="button"  style="height: 25px; width: 85px; background-color: blue;"><a href="/edit/{{i.id}}/" style="color: azure;">Edit&nbsp; <i class="material-icons" style="font-size:20px; color:rgb(229, 230, 243)">edit</i></a></button>
+
             </div>
-
+            <br>
+            <br>
+        {%endfor%}
         </div>
         <div class="form_new">
-            <form action="/" method="post">
+            <form action="/" method="post">{%csrf_token%}
                 <h1>Yaratish</h1>
                 <input type="text" name="title" placeholder="Title todo"><br><br>
                 <input type="datetime-local" name="time"><br><br>
